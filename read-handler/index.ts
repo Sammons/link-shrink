@@ -21,7 +21,6 @@ module.exports.handler = new LambdaHandler({
   gen: true
 })
   .allowOrigins([302, 500], '*')
-  .respondsWithJsonObject(302, b => b.withString('value'))
   .respondsWithJsonObject(500, b => b.withString('message'))
   .respondsWithJsonObject(404, b => b.withString('message'))
   .processesEventWith(async(event, _) => {
@@ -31,8 +30,8 @@ module.exports.handler = new LambdaHandler({
       if (existing.length > 0) {
         return {
           statusCode: 302,
-          body: {
-            value: existing[0].link
+          headers: {
+            Location: existing[0].link
           }
         } as const
       } else {

@@ -6,7 +6,7 @@
     "apply-layer-read": "aws lambda update-function-configuration --region=us-east-1 --function-name link-shrink-read --layers arn:aws:lambda:us-east-1:122302178739:layer:link-shrink-base:10",
     "publish-handler-write": "aws lambda update-function-code --region=us-east-1 --function-name link-shrink --zip-file fileb://writehandler.zip --publish",
     "publish-handler-read": "aws lambda update-function-code --region=us-east-1 --function-name link-shrink-read --zip-file fileb://readhandler.zip --publish",
-    "test": "curl -X POST https://6gk6drmy8b.execute-api.us-east-1.amazonaws.com/prod/shrink -d '{\"value\": \"xy\"}'"
+    "test": "curl -X POST https://6gk6drmy8b.execute-api.us-east-1.amazonaws.com/prod/s -d '{\"value\": \"xy\"}'"
   },
   "dependencies": {
     "aws-sdk": "^2.663.0"
