@@ -32,7 +32,7 @@ module.exports.handler = new LambdaHandler({
         return {
           statusCode: 200,
           body: {
-            value: existing[0].shrunk.S
+            value: existing[0].shrunk
           }
         } as const
       }

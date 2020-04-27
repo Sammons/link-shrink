@@ -7,9 +7,9 @@ lambda-toolkit-api-composer@0.0.16, lambda-toolkit-api-composer@^0.0.16:
   resolved "https://registry.yarnpkg.com/lambda-toolkit-api-composer/-/lambda-toolkit-api-composer-0.0.16.tgz#445499e49ffa2f29fa4f2774c582468385fb5251"
   integrity sha512-6hvrkLuR2dQ4nmLsFGPJXXCgZPu8JvQZeBHlsTDPdXhzT3W3tI//yhuINRsAaiKVhiVFysVSqvn5O7vy6Zv28w==
 
-lambda-toolkit-utilities@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/lambda-toolkit-utilities/-/lambda-toolkit-utilities-0.0.16.tgz#59b0cc5a0f5fd35a3eb24909a8891e7d4851a0cd"
-  integrity sha512-16XWXB4TlQEi5m6TgC/WwLbNsFFLHm/olbjQ6jP9RTtnhZ7RMBzvxzBCfuD6Jy2UDWN+schqwL/diOsWUmNZtw==
+lambda-toolkit-utilities@1.2.16:
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/lambda-toolkit-utilities/-/lambda-toolkit-utilities-1.2.16.tgz#cbeb6d20db1155d63a637eacfc85c4e12bf8e70f"
+  integrity sha512-TF2rgg1R57IYosXLcj2uczvcJ/z28x0J4e3QGzVr5yt9AJdSuTPf+C1ZyIaeuZzsa/DMfKzPnOeeS/OakiiqUw==
   dependencies:
     lambda-toolkit-api-composer "0.0.16"
