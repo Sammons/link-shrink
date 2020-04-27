@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "prep": "cd nodejs/node12 && yarn && cd - && zip layer -r nodejs && tsc -p . && cd built && zip handler -r . && cd .. && cp built/handler.zip .",
+    "layer": "aws lambda publish-layer-version --region=us-east-1 --layer-name link-shrink-base --compatible-runtimes nodejs12.x --license-info MIT --zip-file fileb://layer.zip",
+    "apply-layer": "aws lambda update-function-configuration --region=us-east-1 --function-name link-shrink --layers arn:aws:lambda:us-east-1:122302178739:layer:link-shrink-base:5",
+    "publish-handler": "aws lambda update-function-code --region=us-east-1 --function-name link-shrink --zip-file fileb://handler.zip --publish"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.663.0"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/node": "^13.13.4",
+    "typescript": "^3.8.3"
+  }
+}
