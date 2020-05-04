@@ -26,7 +26,7 @@ module.exports.handler = new LambdaHandler({
   .respondsWithJsonObject(500, b => b.withString('message'))
   .processesEventWith(async(event, _) => {
     try {
-      const toShrink = String(event.body.value).trim();
+      const toShrink = String(decodeURIComponent(event.body.value)).trim();
       const existing = await slim.getAll({ shrunk: {op: '=', value: digestToHash(toShrink) } })
       if (existing.length > 0) {
         return {
