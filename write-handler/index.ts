@@ -21,6 +21,7 @@ module.exports.handler = new LambdaHandler({
   gen: true
 })
   .allowOrigins([200, 500], '*')
+  .setsHeaders([200, 500], {'access-control-allow-origin': '*'})
   .acceptsJsonObject(b => b.withString('value'))
   .respondsWithJsonObject(200, b => b.withString('value'))
   .respondsWithJsonObject(500, b => b.withString('message'))
@@ -44,9 +45,6 @@ module.exports.handler = new LambdaHandler({
       await slim.save([fresh])
       return {
         statusCode: 200,
-        headers: {
-          'access-control-allow-origin': '*'
-        },
         body: {
           value: fresh.shrunk,
         }

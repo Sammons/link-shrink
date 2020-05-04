@@ -21,6 +21,7 @@ module.exports.handler = new LambdaHandler({
   gen: true
 })
   .allowOrigins([302, 500], '*')
+  .setsHeaders([302, 500, 404], {'access-control-allow-origin': '*'})
   .respondsWithJsonObject(500, b => b.withString('message'))
   .respondsWithJsonObject(404, b => b.withString('message'))
   .processesEventWith(async(event, _) => {
