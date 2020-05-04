@@ -27,7 +27,7 @@ module.exports.handler = new LambdaHandler({
     try {
       const hash = String(event.path.split('/').pop()).trim();
       const existing = await slim.getAll({ shrunk: {op: '=', value: hash } })
-      if (existing.length > 0) {
+      if (existing && existing.length > 0) {
         return {
           statusCode: 302,
           headers: {

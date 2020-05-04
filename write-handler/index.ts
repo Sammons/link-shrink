@@ -28,7 +28,7 @@ module.exports.handler = new LambdaHandler({
     try {
       const toShrink = String(decodeURIComponent(event.body.value)).trim();
       const existing = await slim.getAll({ shrunk: {op: '=', value: digestToHash(toShrink) } })
-      if (existing.length > 0) {
+      if (existing && existing.length > 0) {
         return {
           statusCode: 200,
           body: {
@@ -44,6 +44,9 @@ module.exports.handler = new LambdaHandler({
       await slim.save([fresh])
       return {
         statusCode: 200,
+        headers: {
+          'access-control-allow-origin': '*'
+        },
         body: {
           value: fresh.shrunk,
         }
