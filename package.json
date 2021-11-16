@@ -10,7 +10,7 @@
     "test": "curl -X POST https://link.sammons.io/s -d '{\"value\": \"xy\"}'"
   },
   "dependencies": {
-    "aws-sdk": "^2.663.0"
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
